@@ -1,0 +1,24 @@
+# Thành viên chỉ được tạo PR vào `dev`.
+# PR nhắm vào `main` từ bất kỳ ai không phải chủ repo sẽ bị đóng tự động.
+name: Chỉ cho phép PR vào dev
+
+on:
+  pull_request_target:
+    types: [opened, reopened, edited]
+    branches: [main]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  close-pr-to-main:
+    if: github.event.pull_request.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    steps:
+      - name: Đóng PR nhắm vào main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh pr close "$PR" --repo "$REPO" --comment "PR này nhắm vào \`main\` nên đã bị đóng tự động. Chỉ chủ repo được merge vào \`main\`. Vui lòng tạo lại PR với **base: \`dev\`**."
