@@ -1,0 +1,44 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- Môi trường ảo ----------
+.venv/
+venv/
+env/
+.conda/
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# ---------- Biến môi trường / secrets ----------
+.env
+.env.*
+!.env.example
+
+# ---------- Dữ liệu ----------
+# Mặc định dữ liệu nhỏ của bài lab vẫn được commit.
+# Bỏ comment các dòng dưới nếu file dữ liệu quá lớn (> 50MB).
+# data/raw/*
+# !data/raw/.gitkeep
+*.parquet.tmp
+*.sqlite-journal
+
+# ---------- Streamlit / Dash ----------
+.streamlit/secrets.toml
+
+# ---------- Editor / OS ----------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ---------- Công cụ AI ----------
+.playwright-mcp/
+.claude/settings.local.json

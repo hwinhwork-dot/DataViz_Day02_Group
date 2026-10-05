@@ -1,0 +1,14 @@
+# Xử lý dữ liệu
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1
+
+# Trực quan hoá
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.20
+kaleido>=0.2.1  # xuất biểu đồ plotly ra PNG/SVG
+
+# Notebook
+jupyterlab>=4.1
+ipykernel>=6.29
