@@ -1,0 +1,401 @@
+respondent,branch,Drink quality,Price / value,Speed of service,Staff friendliness,Seating & space,Mobile app
+R001,Phan Xich Long,3,3,1,5,1,2
+R002,Vo Van Tan,4,4,5,3,4,3
+R003,Phu My Hung,4,3,2,4,4,5
+R004,Phu My Hung,1,2,4,3,3,4
+R005,Ben Thanh,3,3,2,4,1,2
+R006,Vo Van Tan,5,3,4,5,2,1
+R007,Vo Van Tan,2,4,3,5,1,2
+R008,Vo Van Tan,3,5,3,4,3,3
+R009,Phan Xich Long,5,4,3,4,4,2
+R010,Thao Dien,4,3,4,4,1,4
+R011,Thao Dien,4,3,4,2,3,2
+R012,Vo Van Tan,4,5,4,4,3,1
+R013,Phu My Hung,4,3,3,3,3,3
+R014,Quang Trung,4,4,2,5,3,4
+R015,Phan Xich Long,3,1,3,5,3,2
+R016,Ben Thanh,5,3,3,3,2,2
+R017,Ben Thanh,4,3,4,4,4,2
+R018,Phu My Hung,4,4,3,3,3,1
+R019,Vo Van Tan,5,4,3,5,3,3
+R020,Phu My Hung,4,2,2,4,5,1
+R021,Quang Trung,5,3,4,5,4,3
+R022,Ben Thanh,3,3,2,4,2,3
+R023,Thao Dien,4,2,4,4,5,3
+R024,Phan Xich Long,4,4,4,3,3,1
+R025,Thao Dien,4,3,4,5,3,1
+R026,Ben Thanh,4,5,2,4,2,3
+R027,Quang Trung,3,2,3,5,1,3
+R028,Vo Van Tan,5,3,5,4,2,1
+R029,Thao Dien,5,2,2,4,2,1
+R030,Thao Dien,3,3,4,5,3,4
+R031,Vo Van Tan,4,3,3,4,5,2
+R032,Thao Dien,4,3,4,5,4,4
+R033,Phu My Hung,2,2,3,4,2,2
+R034,Thao Dien,5,3,2,5,3,2
+R035,Quang Trung,4,3,4,5,3,4
+R036,Phu My Hung,3,4,1,5,1,2
+R037,Vo Van Tan,4,3,5,4,3,3
+R038,Vo Van Tan,3,3,4,4,3,3
+R039,Phan Xich Long,5,2,3,5,5,4
+R040,Vo Van Tan,3,2,4,4,3,2
+R041,Quang Trung,2,5,4,4,4,3
+R042,Quang Trung,3,2,5,5,4,2
+R043,Quang Trung,4,4,1,4,2,3
+R044,Phu My Hung,4,3,3,5,3,1
+R045,Thao Dien,5,5,3,5,3,2
+R046,Phu My Hung,4,2,4,4,2,1
+R047,Phu My Hung,4,5,4,4,1,1
+R048,Phu My Hung,1,4,3,5,5,4
+R049,Vo Van Tan,3,3,1,5,1,3
+R050,Ben Thanh,5,4,4,5,5,4
+R051,Phu My Hung,4,4,3,5,3,5
+R052,Phu My Hung,4,3,2,3,1,2
+R053,Vo Van Tan,2,3,4,5,5,4
+R054,Phan Xich Long,2,2,3,5,4,5
+R055,Vo Van Tan,5,1,3,4,3,2
+R056,Phu My Hung,4,4,3,3,4,1
+R057,Phu My Hung,4,3,4,4,4,3
+R058,Thao Dien,4,4,2,3,3,3
+R059,Quang Trung,2,2,3,2,4,3
+R060,Vo Van Tan,3,4,5,5,4,3
+R061,Phu My Hung,1,5,3,5,2,2
+R062,Quang Trung,5,4,3,4,4,1
+R063,Quang Trung,4,5,4,5,5,2
+R064,Phan Xich Long,3,2,5,5,4,3
+R065,Ben Thanh,5,2,5,4,4,2
+R066,Quang Trung,3,2,4,3,5,2
+R067,Quang Trung,2,2,5,4,4,4
+R068,Vo Van Tan,4,1,4,4,3,3
+R069,Phu My Hung,5,2,4,4,3,1
+R070,Ben Thanh,1,1,3,4,4,3
+R071,Thao Dien,5,5,2,3,4,2
+R072,Quang Trung,3,2,4,4,1,3
+R073,Quang Trung,2,3,4,3,1,2
+R074,Ben Thanh,1,3,5,5,2,1
+R075,Vo Van Tan,4,4,3,3,4,4
+R076,Phu My Hung,5,4,5,4,2,3
+R077,Phan Xich Long,4,3,2,4,3,5
+R078,Ben Thanh,5,3,5,4,4,1
+R079,Thao Dien,3,1,5,4,2,3
+R080,Phan Xich Long,4,2,1,4,2,3
+R081,Ben Thanh,4,2,3,2,2,3
+R082,Thao Dien,5,2,5,5,1,4
+R083,Vo Van Tan,5,2,5,4,4,2
+R084,Vo Van Tan,4,3,4,3,3,2
+R085,Phan Xich Long,4,2,2,5,3,1
+R086,Vo Van Tan,4,2,1,3,3,3
+R087,Phu My Hung,5,4,2,5,1,3
+R088,Quang Trung,2,1,5,4,4,1
+R089,Phan Xich Long,2,1,4,4,2,2
+R090,Phu My Hung,4,1,3,4,2,2
+R091,Ben Thanh,3,4,4,4,4,3
+R092,Quang Trung,5,3,5,4,3,1
+R093,Phu My Hung,5,4,3,3,3,3
+R094,Phan Xich Long,4,5,5,4,3,4
+R095,Phan Xich Long,4,2,3,4,3,2
+R096,Quang Trung,4,5,3,5,3,1
+R097,Quang Trung,5,2,1,3,3,1
+R098,Phan Xich Long,5,3,2,2,1,4
+R099,Phan Xich Long,3,4,4,5,1,3
+R100,Phan Xich Long,4,4,1,2,3,1
+R101,Quang Trung,3,2,4,4,4,1
+R102,Phu My Hung,4,3,2,4,5,4
+R103,Quang Trung,5,1,4,5,4,3
+R104,Vo Van Tan,5,2,2,3,3,3
+R105,Phu My Hung,5,5,2,5,4,1
+R106,Vo Van Tan,2,4,3,3,4,5
+R107,Phan Xich Long,4,3,4,3,4,2
+R108,Phu My Hung,3,4,4,5,5,2
+R109,Phu My Hung,5,4,4,3,3,2
+R110,Phu My Hung,3,2,4,4,3,5
+R111,Quang Trung,3,5,4,5,4,3
+R112,Thao Dien,4,3,4,3,2,3
+R113,Ben Thanh,2,2,3,5,1,3
+R114,Quang Trung,5,3,2,4,5,4
+R115,Quang Trung,4,3,5,5,1,3
+R116,Quang Trung,3,4,3,1,5,3
+R117,Phan Xich Long,4,4,4,3,5,1
+R118,Phu My Hung,2,1,1,4,2,4
+R119,Thao Dien,4,3,3,4,4,1
+R120,Ben Thanh,3,5,2,4,2,5
+R121,Phu My Hung,2,4,3,5,2,5
+R122,Phu My Hung,3,5,4,4,5,3
+R123,Quang Trung,4,3,3,2,5,1
+R124,Phan Xich Long,4,4,4,3,4,2
+R125,Phu My Hung,4,2,2,4,3,1
+R126,Thao Dien,4,4,3,5,5,4
+R127,Phu My Hung,4,3,3,5,3,2
+R128,Quang Trung,3,4,4,4,5,5
+R129,Phu My Hung,4,2,2,3,4,2
+R130,Phan Xich Long,4,3,4,3,1,2
+R131,Vo Van Tan,5,4,5,3,4,3
+R132,Thao Dien,3,4,4,3,4,4
+R133,Phan Xich Long,2,3,1,5,5,3
+R134,Vo Van Tan,4,5,3,4,4,1
+R135,Ben Thanh,5,1,3,3,1,1
+R136,Phu My Hung,5,1,4,4,4,4
+R137,Quang Trung,5,3,2,4,3,4
+R138,Quang Trung,2,5,4,2,2,5
+R139,Thao Dien,5,4,3,5,2,3
+R140,Ben Thanh,4,2,5,5,2,4
+R141,Phu My Hung,3,1,1,4,4,3
+R142,Thao Dien,4,3,3,5,1,3
+R143,Ben Thanh,2,3,3,4,5,4
+R144,Quang Trung,5,3,4,5,1,2
+R145,Thao Dien,5,3,4,5,4,1
+R146,Phu My Hung,5,2,2,5,2,2
+R147,Phan Xich Long,5,4,3,4,3,2
+R148,Phu My Hung,4,2,4,3,2,5
+R149,Ben Thanh,5,1,3,5,5,4
+R150,Vo Van Tan,3,2,3,4,2,4
+R151,Phu My Hung,3,5,5,4,3,4
+R152,Phu My Hung,4,2,4,5,4,2
+R153,Phu My Hung,4,2,3,5,3,5
+R154,Quang Trung,4,5,4,5,2,5
+R155,Phu My Hung,4,2,5,4,2,2
+R156,Ben Thanh,4,4,2,4,5,2
+R157,Quang Trung,3,1,5,3,2,2
+R158,Vo Van Tan,4,4,5,3,1,2
+R159,Ben Thanh,4,2,4,4,5,5
+R160,Vo Van Tan,5,2,4,4,5,2
+R161,Vo Van Tan,4,4,4,4,4,4
+R162,Ben Thanh,5,5,4,3,3,3
+R163,Thao Dien,4,5,4,5,5,1
+R164,Quang Trung,4,4,2,4,3,3
+R165,Quang Trung,4,4,4,4,1,4
+R166,Vo Van Tan,4,5,4,5,3,2
+R167,Thao Dien,4,3,3,5,3,2
+R168,Quang Trung,5,2,4,5,3,1
+R169,Quang Trung,2,4,3,5,5,3
+R170,Ben Thanh,4,3,4,5,1,5
+R171,Quang Trung,4,2,4,4,4,1
+R172,Phu My Hung,1,3,2,5,3,4
+R173,Vo Van Tan,3,1,4,2,4,3
+R174,Quang Trung,5,1,3,5,3,2
+R175,Vo Van Tan,5,2,2,4,2,4
+R176,Quang Trung,4,3,2,4,3,5
+R177,Vo Van Tan,5,4,3,4,2,5
+R178,Phan Xich Long,5,5,4,4,3,3
+R179,Vo Van Tan,4,4,3,5,4,3
+R180,Thao Dien,4,5,2,5,4,3
+R181,Quang Trung,4,3,4,5,2,4
+R182,Vo Van Tan,5,4,3,3,3,2
+R183,Vo Van Tan,4,3,5,4,3,2
+R184,Phu My Hung,3,1,2,3,4,3
+R185,Quang Trung,5,1,4,5,4,1
+R186,Ben Thanh,4,4,3,2,4,4
+R187,Phan Xich Long,5,2,4,4,4,3
+R188,Phan Xich Long,4,4,4,3,3,3
+R189,Thao Dien,5,3,4,5,4,3
+R190,Ben Thanh,4,1,2,5,4,4
+R191,Thao Dien,4,3,4,4,3,4
+R192,Ben Thanh,2,3,3,5,2,2
+R193,Phan Xich Long,4,1,4,3,3,2
+R194,Quang Trung,5,2,4,5,2,2
+R195,Thao Dien,5,2,2,4,2,3
+R196,Phu My Hung,5,2,1,4,2,4
+R197,Quang Trung,4,4,4,4,4,1
+R198,Thao Dien,5,2,5,4,3,3
+R199,Phu My Hung,3,3,5,3,3,4
+R200,Quang Trung,5,3,3,4,3,3
+R201,Vo Van Tan,4,5,4,5,2,2
+R202,Phu My Hung,2,1,1,5,3,3
+R203,Thao Dien,4,1,1,4,3,3
+R204,Phan Xich Long,4,2,4,4,5,3
+R205,Vo Van Tan,4,2,4,3,4,1
+R206,Quang Trung,5,2,4,3,5,4
+R207,Quang Trung,3,1,2,2,4,3
+R208,Vo Van Tan,4,2,3,3,3,2
+R209,Thao Dien,4,2,5,5,1,5
+R210,Ben Thanh,4,3,3,3,2,2
+R211,Ben Thanh,4,3,3,4,2,4
+R212,Vo Van Tan,3,2,4,4,4,2
+R213,Vo Van Tan,4,2,5,3,2,3
+R214,Ben Thanh,5,1,2,4,4,2
+R215,Thao Dien,3,2,4,4,3,2
+R216,Ben Thanh,1,2,3,4,3,2
+R217,Quang Trung,2,3,3,3,4,1
+R218,Quang Trung,4,4,3,4,2,4
+R219,Thao Dien,5,4,3,5,2,3
+R220,Phu My Hung,2,2,4,1,2,2
+R221,Ben Thanh,5,1,3,3,5,3
+R222,Ben Thanh,4,1,4,4,3,2
+R223,Ben Thanh,3,3,4,4,2,3
+R224,Quang Trung,4,2,5,4,2,3
+R225,Phan Xich Long,3,4,4,5,1,3
+R226,Quang Trung,5,1,3,4,3,3
+R227,Vo Van Tan,4,2,5,5,4,4
+R228,Quang Trung,4,4,2,4,3,4
+R229,Phu My Hung,4,3,1,2,4,5
+R230,Thao Dien,5,3,5,4,5,3
+R231,Ben Thanh,5,4,3,3,3,5
+R232,Thao Dien,4,1,2,4,3,5
+R233,Ben Thanh,4,2,3,5,4,3
+R234,Quang Trung,5,3,3,2,1,1
+R235,Phan Xich Long,5,3,3,2,4,3
+R236,Vo Van Tan,2,5,5,2,5,3
+R237,Quang Trung,3,5,3,4,4,4
+R238,Quang Trung,4,3,2,3,1,2
+R239,Phan Xich Long,4,4,2,5,4,5
+R240,Vo Van Tan,2,4,5,5,4,2
+R241,Vo Van Tan,2,2,3,5,3,5
+R242,Ben Thanh,3,3,3,4,4,2
+R243,Ben Thanh,4,2,4,5,2,3
+R244,Phu My Hung,5,2,5,5,3,3
+R245,Thao Dien,4,2,4,4,3,2
+R246,Ben Thanh,1,1,4,5,4,3
+R247,Quang Trung,2,4,3,4,3,3
+R248,Vo Van Tan,4,4,3,4,2,4
+R249,Phan Xich Long,5,4,4,5,4,5
+R250,Ben Thanh,5,2,2,3,2,3
+R251,Quang Trung,4,3,3,3,3,5
+R252,Ben Thanh,5,2,2,5,3,2
+R253,Phan Xich Long,5,3,3,4,4,3
+R254,Ben Thanh,4,4,4,3,3,4
+R255,Thao Dien,5,4,4,4,3,1
+R256,Phu My Hung,4,5,2,4,4,4
+R257,Phan Xich Long,3,2,3,5,4,4
+R258,Quang Trung,4,4,4,4,5,3
+R259,Phu My Hung,2,2,5,5,3,5
+R260,Thao Dien,4,3,4,4,3,3
+R261,Vo Van Tan,5,1,4,5,1,2
+R262,Ben Thanh,5,3,2,5,2,4
+R263,Quang Trung,4,3,4,4,2,3
+R264,Quang Trung,3,2,4,5,2,3
+R265,Phan Xich Long,5,2,3,4,3,5
+R266,Thao Dien,5,4,2,3,2,3
+R267,Vo Van Tan,5,3,1,4,3,4
+R268,Phu My Hung,4,3,4,2,4,4
+R269,Quang Trung,4,1,4,4,1,2
+R270,Phan Xich Long,4,2,1,4,2,1
+R271,Quang Trung,3,4,4,5,3,1
+R272,Ben Thanh,4,5,5,5,1,3
+R273,Phu My Hung,5,3,1,3,2,5
+R274,Ben Thanh,4,4,2,5,3,3
+R275,Vo Van Tan,4,4,1,4,3,5
+R276,Quang Trung,4,2,3,4,5,2
+R277,Phan Xich Long,4,2,3,4,3,1
+R278,Vo Van Tan,5,4,5,5,4,3
+R279,Thao Dien,3,2,1,4,3,4
+R280,Ben Thanh,4,5,2,1,3,5
+R281,Quang Trung,3,2,5,5,4,3
+R282,Thao Dien,5,4,1,5,4,2
+R283,Thao Dien,4,4,3,5,5,4
+R284,Vo Van Tan,4,2,3,3,2,3
+R285,Phan Xich Long,3,4,1,3,2,2
+R286,Vo Van Tan,4,2,3,4,4,4
+R287,Thao Dien,4,1,4,5,2,1
+R288,Quang Trung,3,1,4,5,1,4
+R289,Vo Van Tan,2,3,4,4,3,5
+R290,Thao Dien,4,3,4,5,4,1
+R291,Thao Dien,4,2,4,3,3,4
+R292,Phu My Hung,4,4,1,4,4,1
+R293,Vo Van Tan,5,2,4,4,3,1
+R294,Ben Thanh,5,4,4,5,2,2
+R295,Quang Trung,5,1,2,4,3,5
+R296,Vo Van Tan,5,2,3,5,4,1
+R297,Ben Thanh,4,2,2,5,2,3
+R298,Phu My Hung,4,3,5,5,4,3
+R299,Quang Trung,4,2,3,5,2,1
+R300,Thao Dien,4,3,2,2,5,5
+R301,Vo Van Tan,2,4,4,5,3,2
+R302,Quang Trung,5,3,4,4,2,5
+R303,Thao Dien,3,3,5,3,1,3
+R304,Thao Dien,1,3,4,4,2,4
+R305,Phu My Hung,4,4,3,5,3,4
+R306,Thao Dien,5,3,3,5,3,3
+R307,Phan Xich Long,4,4,4,3,4,4
+R308,Phu My Hung,4,4,4,3,4,4
+R309,Vo Van Tan,4,3,5,5,3,1
+R310,Vo Van Tan,3,3,3,5,4,1
+R311,Phan Xich Long,1,2,4,3,3,3
+R312,Phan Xich Long,4,4,1,3,2,1
+R313,Vo Van Tan,4,4,2,5,2,3
+R314,Phan Xich Long,5,4,5,4,3,5
+R315,Phu My Hung,4,2,3,5,4,3
+R316,Ben Thanh,5,3,4,3,2,1
+R317,Vo Van Tan,1,4,5,4,4,1
+R318,Ben Thanh,1,2,4,5,1,3
+R319,Quang Trung,4,4,3,4,2,4
+R320,Vo Van Tan,3,3,4,4,4,4
+R321,Phan Xich Long,2,2,5,2,4,4
+R322,Ben Thanh,3,3,5,5,4,3
+R323,Thao Dien,4,1,2,4,4,4
+R324,Quang Trung,4,4,2,4,2,3
+R325,Quang Trung,4,4,3,5,5,3
+R326,Phan Xich Long,5,1,2,5,4,1
+R327,Vo Van Tan,4,2,4,5,5,3
+R328,Thao Dien,3,4,4,4,5,1
+R329,Vo Van Tan,4,2,2,4,2,2
+R330,Thao Dien,1,3,1,4,5,2
+R331,Phu My Hung,4,4,3,5,1,3
+R332,Ben Thanh,4,3,4,5,4,1
+R333,Quang Trung,4,2,4,5,2,4
+R334,Thao Dien,2,4,3,5,1,2
+R335,Ben Thanh,4,4,4,4,3,2
+R336,Phu My Hung,4,3,5,4,2,5
+R337,Vo Van Tan,5,2,5,3,4,3
+R338,Ben Thanh,5,3,2,5,3,2
+R339,Phu My Hung,4,3,4,4,2,1
+R340,Phan Xich Long,4,1,4,4,1,3
+R341,Thao Dien,4,2,5,1,4,4
+R342,Quang Trung,3,1,3,4,4,3
+R343,Thao Dien,5,2,2,4,4,2
+R344,Vo Van Tan,5,2,3,4,3,1
+R345,Ben Thanh,5,3,3,4,5,2
+R346,Vo Van Tan,5,3,3,4,1,4
+R347,Ben Thanh,5,3,4,5,5,1
+R348,Vo Van Tan,3,4,4,5,4,5
+R349,Thao Dien,1,1,4,4,2,4
+R350,Phan Xich Long,3,3,4,4,5,3
+R351,Ben Thanh,4,1,2,3,1,2
+R352,Thao Dien,4,3,1,4,4,3
+R353,Phu My Hung,4,1,3,2,2,5
+R354,Ben Thanh,4,1,4,5,4,1
+R355,Quang Trung,5,1,4,4,4,2
+R356,Vo Van Tan,2,3,4,4,2,1
+R357,Quang Trung,4,4,4,4,3,4
+R358,Vo Van Tan,2,2,4,3,5,5
+R359,Quang Trung,3,4,5,5,3,3
+R360,Phu My Hung,5,2,4,5,2,2
+R361,Phan Xich Long,4,2,5,5,1,5
+R362,Phan Xich Long,4,3,5,4,2,3
+R363,Phu My Hung,4,1,4,5,2,5
+R364,Thao Dien,5,3,4,4,3,2
+R365,Quang Trung,4,3,1,4,4,1
+R366,Thao Dien,2,4,1,3,3,1
+R367,Thao Dien,3,1,5,4,1,2
+R368,Phan Xich Long,1,4,2,5,3,3
+R369,Phu My Hung,5,3,3,5,3,4
+R370,Phu My Hung,3,3,2,4,3,3
+R371,Vo Van Tan,5,1,4,4,4,2
+R372,Thao Dien,3,4,1,4,4,5
+R373,Ben Thanh,4,2,4,4,4,3
+R374,Ben Thanh,4,3,3,4,3,3
+R375,Phu My Hung,4,3,4,4,1,4
+R376,Vo Van Tan,4,4,5,3,4,3
+R377,Phan Xich Long,3,3,4,4,4,2
+R378,Ben Thanh,4,5,3,5,4,5
+R379,Phu My Hung,1,2,4,3,3,1
+R380,Vo Van Tan,3,3,5,4,5,1
+R381,Phu My Hung,5,3,4,5,1,3
+R382,Phan Xich Long,4,3,3,3,4,3
+R383,Ben Thanh,4,3,1,3,4,2
+R384,Vo Van Tan,4,3,5,5,4,4
+R385,Thao Dien,5,2,4,3,1,1
+R386,Phu My Hung,4,3,1,4,5,3
+R387,Ben Thanh,4,1,4,5,1,5
+R388,Phu My Hung,5,3,4,4,2,4
+R389,Thao Dien,5,3,3,5,3,3
+R390,Ben Thanh,4,2,5,5,3,4
+R391,Phan Xich Long,3,3,2,1,2,3
+R392,Quang Trung,3,3,2,3,2,2
+R393,Vo Van Tan,5,2,3,5,5,4
+R394,Phan Xich Long,5,2,3,4,3,3
+R395,Vo Van Tan,5,1,5,4,3,3
+R396,Phu My Hung,5,3,4,5,2,5
+R397,Phan Xich Long,4,1,2,3,3,3
+R398,Vo Van Tan,3,2,3,5,4,2
+R399,Ben Thanh,5,3,2,4,4,3
+R400,Quang Trung,4,3,4,4,2,3
