@@ -1,0 +1,28 @@
+# `main` chỉ nhận Pull Request từ nhánh `dev`.
+# Ruleset "main - chỉ nhận PR từ dev" bắt buộc check `chi-nhan-tu-dev` phải qua mới merge được,
+# và ruleset đó không cho ai bỏ qua (kể cả chủ repo).
+name: main chỉ nhận từ dev
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened, edited]
+
+permissions: {}
+
+jobs:
+  chi-nhan-tu-dev:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kiểm tra nhánh nguồn của PR
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$HEAD_REF" = "dev" ] && [ "$HEAD_REPO" = "$REPO" ]; then
+            echo "PR từ dev: hợp lệ."
+          else
+            echo "::error::main chỉ nhận PR từ nhánh dev. PR này đến từ $HEAD_REPO:$HEAD_REF."
+            exit 1
+          fi
