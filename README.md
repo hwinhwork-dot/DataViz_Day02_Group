@@ -4,14 +4,14 @@
 
 ## Thành viên & nhánh làm việc
 
-| Thành viên  | Nhánh riêng   |
-|-------------|---------------|
-| hwinh       | `hwinh`       |
-| Quang Minh  | `quang-minh`  |
-| Tuấn Anh    | `tuan-anh`    |
-| Nhã Đoan    | `nha-doan`    |
-| Minh Nguyệt | `minh-nguyet` |
-| Thảo        | `thao`        |
+| Thành viên | Nhánh riêng |
+|---|---|
+| Nguyễn Hoàng Minh (leader) | `hwinh` |
+| Phạm Quang Minh | `quang-minh` |
+| Phạm Tuấn Anh | `tuan-anh` |
+| Trần Nhã Đoan | `nha-doan` |
+| Nguyễn Minh Nguyệt | `minh-nguyet` |
+| Trần Nguyễn Thanh Thảo | `thao` |
 
 ## Quy trình làm việc
 
@@ -48,11 +48,13 @@ git push origin thao
 
 ```
 .
+├── activities/       # Activity A–D của Session 2 (mỗi activity 1 file .py + file chạy tổng)
+├── homework/         # 2 bài nhóm Session 2: mới có khung, chưa làm
 ├── data/
 │   ├── raw/          # Dữ liệu gốc, không chỉnh sửa
 │   └── processed/    # Dữ liệu đã làm sạch / biến đổi
 ├── notebooks/        # Jupyter notebooks phân tích & vẽ biểu đồ
-├── src/              # Hàm Python dùng lại (load, clean, plot)
+├── src/              # Hàm Python dùng lại (style.py: style chung cho mọi biểu đồ)
 ├── outputs/
 │   └── figures/      # Biểu đồ xuất ra (PNG/SVG/HTML)
 ├── reports/          # Báo cáo / bài nộp
@@ -70,4 +72,31 @@ jupyter lab
 
 ## Nội dung bài làm
 
-_(Sẽ cập nhật theo yêu cầu của bài lab.)_
+### Activity A–D (Session 2 · Data and visualization models)
+
+Mỗi activity là một file độc lập, chạy xong lưu 1 hình vào `outputs/figures/`.
+
+| Activity | File | Hình | Kết luận chính |
+|---|---|---|---|
+| A · Which dataset type? | [activity_a_dataset_types.py](activities/activity_a_dataset_types.py) | [png](outputs/figures/activity_a_dataset_types.png) | 6 tình huống, 5 loại dataset; chỉ đơn hàng giao đến “ngay lúc này” là stream (mục 2 và 4 có thể lập luận theo hai cách) |
+| B · Classify the attributes | [activity_b_attribute_types.py](activities/activity_b_attribute_types.py) | [png](outputs/figures/activity_b_attribute_types.png) | 11 cột chia 3 nhóm: 4 định danh, 3 thứ bậc, 4 định lượng; key duy nhất là `order_id`; không lấy trung bình `order_id`, `rating` còn tranh luận |
+| C · Reshape on paper | [activity_c_reshape.py](activities/activity_c_reshape.py) | [png](outputs/figures/activity_c_reshape.png) | `melt` cho 6 dòng (key: branch + category); thêm ngày: long thêm 1 cột, wide thêm 3 cột mỗi ngày |
+| D · From vague to precise | [activity_d_vague_to_precise.py](activities/activity_d_vague_to_precise.py) | [png](outputs/figures/activity_d_vague_to_precise.png) | 4 yêu cầu mơ hồ → 5 task → 5 biểu đồ vẽ từ dữ liệu thật |
+
+Chạy cả 4 một lần: [activities/run_all_activities.py](activities/run_all_activities.py).
+
+```bash
+python activities/run_all_activities.py          # cả A–D
+python activities/activity_c_reshape.py          # hoặc từng activity
+```
+
+Style kế thừa từ bài Session 1 (`src/style.py`): font serif Georgia, mực đen + xám, một màu nhấn,
+tiêu đề nói thẳng kết luận, phụ đề nghiêng, chú thích nguồn ở cuối. Bảng màu đã được kiểm tra cho
+người mù màu. Dữ liệu là dữ liệu mô phỏng của khoá học (`data/raw/`).
+
+### Bài nhóm · Group Homework 2 (GoMart)
+
+Đã xong Task 0–4 (team card, Look, Name, Clean, Merge); còn **Task 5–7** cho cả nhóm.
+Bài nộp: [homework/gh2_gomart/GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb).
+Dữ liệu đã làm sạch để vẽ Task 5: [homework/gh2_gomart/gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv).
+Chi tiết và việc còn lại: [homework/README.md](homework/README.md).
