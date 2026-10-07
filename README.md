@@ -19,8 +19,9 @@
 nhánh riêng ──PR──▶ dev ──(chỉ hwinh)──▶ main
 ```
 
-- `main`: bản nộp cuối. **Chỉ hwinh** được merge/push vào `main`.
-- `dev`: nhánh tích hợp chung. Không push thẳng — mọi thay đổi vào qua **Pull Request**.
+- `main`: bản nộp cuối. **Chỉ nhận PR từ `dev`**, do hwinh merge. Không ai push thẳng được,
+  PR từ nhánh khác bị chặn (check `chi-nhan-tu-dev` báo lỗi).
+- `dev`: nhánh tích hợp chung. Thành viên **chỉ tạo Pull Request**; **chỉ hwinh merge**.
 - Nhánh riêng: mỗi người chỉ làm trên nhánh của mình.
 
 PR nhắm vào `main` do thành viên khác tạo sẽ bị **tự động đóng** — hãy chọn base là `dev`.
