@@ -1,14 +1,19 @@
-# Bài nhóm Session 2 · chỉ có khung, chưa làm
+# Bài nhóm Session 2 · đã làm Task 0–4, còn Task 5–7
 
-Hai bài nhóm của buổi 2 (slide 58–59). Các file ở đây **mới là khung trống** để nhóm brainstorm
-và chia việc; chưa có lời giải.
+Hai bài nhóm của buổi 2 (slide 58–59).
 
 | # | Bài | File | Nộp |
 |---|---|---|---|
 | 1 | Project kick-off · team card (3 dataset ứng viên, mỗi dataset 2 câu hỏi dạng action + target) | [project_kickoff_team_card.md](project_kickoff_team_card.md) | là Task 0 của GH2; proposal 1 trang ở Session 4 |
-| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (notebook gốc của giảng viên) · [gh2_gomart/gh2_gomart.py](gh2_gomart/gh2_gomart.py) (cùng khung, dạng `.py`) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
+| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (bản nộp) · [gh2_gomart/gh2_gomart.py](gh2_gomart/gh2_gomart.py) (cùng nội dung, dạng `.py`) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
 
 Dữ liệu GoMart đã có sẵn trong `data/raw/` (`gomart_orders_2025.csv`, `gomart_districts.csv`).
+
+**Tiến độ GH2:** Task 0 (team card nháp: điền mã SV, vai trò, tên nhóm) · Task 1 Look · Task 2 Name
+· Task 3 Clean · Task 4 Merge đã xong. Chạy notebook sẽ tạo ra
+[gh2_gomart/gomart_orders_clean.csv](gh2_gomart/gomart_orders_clean.csv): 5.913 đơn đã làm sạch,
+có thêm `zone`, `km_to_hub`, `hour`, `weekday`, `month`, là dữ liệu cho Task 5.
+Còn lại: **Task 5** (4 biểu đồ), **Task 6** (memo + Big Idea), **Task 7** (phân công + khai báo AI).
 
 ## GH2 cần làm gì (tóm tắt brief)
 

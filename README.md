@@ -4,14 +4,14 @@
 
 ## Thành viên & nhánh làm việc
 
-| Thành viên  | Nhánh riêng   |
-|-------------|---------------|
-| hwinh       | `hwinh`       |
-| Quang Minh  | `quang-minh`  |
-| Tuấn Anh    | `tuan-anh`    |
-| Nhã Đoan    | `nha-doan`    |
-| Minh Nguyệt | `minh-nguyet` |
-| Thảo        | `thao`        |
+| Thành viên | Nhánh riêng |
+|---|---|
+| Nguyễn Hoàng Minh (leader) | `hwinh` |
+| Phạm Quang Minh | `quang-minh` |
+| Phạm Tuấn Anh | `tuan-anh` |
+| Trần Nhã Đoan | `nha-doan` |
+| Nguyễn Minh Nguyệt | `minh-nguyet` |
+| Trần Nguyễn Thanh Thảo | `thao` |
 
 ## Quy trình làm việc
 
@@ -94,6 +94,9 @@ Style kế thừa từ bài Session 1 (`src/style.py`): font serif Georgia, mự
 tiêu đề nói thẳng kết luận, phụ đề nghiêng, chú thích nguồn ở cuối. Bảng màu đã được kiểm tra cho
 người mù màu. Dữ liệu là dữ liệu mô phỏng của khoá học (`data/raw/`).
 
-### Bài nhóm (chưa làm)
+### Bài nhóm · Group Homework 2 (GoMart)
 
-Xem [homework/README.md](homework/README.md): team card dự án + Group Homework 2 (GoMart).
+Đã xong Task 0–4 (team card, Look, Name, Clean, Merge); còn **Task 5–7** cho cả nhóm.
+Bài nộp: [homework/gh2_gomart/GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb).
+Dữ liệu đã làm sạch để vẽ Task 5: [homework/gh2_gomart/gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv).
+Chi tiết và việc còn lại: [homework/README.md](homework/README.md).
