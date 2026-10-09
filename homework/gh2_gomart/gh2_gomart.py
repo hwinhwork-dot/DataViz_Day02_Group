@@ -328,7 +328,6 @@ print("saved:", HERE / "gomart_orders_clean.csv", orders.shape)
 # Only delivered orders with valid times and ratings are included.
 
 # %%
-# TODO Q3
 # Q3 - Delivery Time vs Customer Rating
 # Use the cleaned dataset from Task 4
 
