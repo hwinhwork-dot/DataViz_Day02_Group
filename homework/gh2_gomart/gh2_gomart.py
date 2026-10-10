@@ -561,13 +561,93 @@ plt.show()
 # Since ratings are optional, selection bias may exist.
 #
 # ### Q4 · When are the peaks?
-# *Task: ...  Chart and why: ...*
+#
+# **Task (action + target):** Identify the weekday–hour slots with the highest order volume to plan rider shifts.
+#
+# **Chart and why:** A heatmap. It shows both dimensions of the peak pattern at once — which day *and* which hour is busiest — instead of collapsing one of them. X = hour of day (0–23), Y = weekday (Mon → Sun), colour = number of orders (colorbar labelled "Orders"). The full 7 × 24 grid is shown; weekday–hour slots with no order are 0.
+#
+# Counted on every order line (unique `order_id`) of the cleaned 2025 data — delivered and cancelled alike — so the total matches "orders in 2025"; this is stated in the interpretation below.
 
 # %%
-# TODO Q4
+# Q4 - Order peaks by weekday x hour
+# Independent of Q1-Q3: use the Task 4 table if present, else read the clean CSV.
+df = orders.copy() if "orders" in globals() else pd.read_csv(HERE / "gomart_orders_clean.csv")
+from matplotlib.colors import LinearSegmentedColormap
+
+# Re-establish the ordered weekday so rows follow Mon -> Sun even after a CSV round-trip.
+DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+df["weekday"] = pd.Categorical(df["weekday"].astype(str).str[:3], DAYS, ordered=True)
+df["hour"] = df["hour"].astype(int)
+
+# Orders per weekday x hour, counted on each order line (unique order_id) of the cleaned
+# 2025 data. `counts` is a full 7 x 24 table; weekday-hour slots with no order stay 0.
+counts = pd.crosstab(df["weekday"], df["hour"]).reindex(index=DAYS, columns=range(24), fill_value=0)
+
+# Consistency checks: the table is 7 x 24 and the plotted total matches the orders fed in.
+assert counts.shape == (7, 24), counts.shape
+assert int(counts.values.sum()) == df["order_id"].nunique() == len(df)
+print("weekday x hour table:", counts.shape, "| orders plotted:", int(counts.values.sum()))
+
+# Find the busiest slot(s) and busiest hour from the table itself (no hard-coded result).
+peak_val = int(counts.values.max())
+peak_slots = [(d, int(h)) for d in DAYS for h in range(24) if counts.loc[d, h] == peak_val]
+hours_rank = counts.sum(axis=0).sort_values(ascending=False)
+peak_hour, peak_hour_total = int(hours_rank.index[0]), int(hours_rank.iloc[0])
+h2, v2 = int(hours_rank.index[1]), int(hours_rank.iloc[1])
+h3, v3 = int(hours_rank.index[2]), int(hours_rank.iloc[2])
+peak_desc = ", ".join(f"{d} {h:02d}:00" for (d, h) in peak_slots)
+print("peak slot(s):", peak_slots, "=", peak_val,
+      "| busiest hour:", peak_hour, f"({peak_hour_total})", "| then", h2, v2, "|", h3, v3)
+
+# ---- Heatmap ----
+cmap = LinearSegmentedColormap.from_list("gomart", ["#f4f3ef", "#a9c0e2", "#1d56ba"])
+fig, ax = plt.subplots(figsize=(13, 4.8), dpi=150)
+fig.patch.set_facecolor("#ffffff")
+ax.set_facecolor("#ffffff")
+
+im = ax.imshow(counts.values, aspect="auto", cmap=cmap, origin="upper")
+
+# Outline the peak slot(s).
+for (d, h) in peak_slots:
+    ax.add_patch(plt.Rectangle((h - 0.5, DAYS.index(d) - 0.5), 1, 1,
+                               fill=False, edgecolor="#db7043", linewidth=2.4))
+
+ax.set_xticks(range(24))
+ax.set_xticklabels([f"{h:02d}" for h in range(24)], fontsize=9)
+ax.set_yticks(range(7))
+ax.set_yticklabels(DAYS, fontsize=10)
+ax.set_xticks(np.arange(-0.5, 24, 1), minor=True)
+ax.set_yticks(np.arange(-0.5, 7, 1), minor=True)
+ax.grid(which="minor", color="white", linewidth=1.2)
+ax.tick_params(which="minor", length=0)
+ax.set_xlabel("Hour of day (0-23)", fontsize=11)
+ax.set_ylabel("Weekday (Mon -> Sun)", fontsize=11)
+
+cbar = fig.colorbar(im, ax=ax, pad=0.015)
+cbar.set_label("Orders", fontsize=10)
+cbar.outline.set_visible(False)
+
+# Title states the finding computed above; subtitle gives the weekly hour ranking.
+ax.set_title(f"Delivery demand peaks at {peak_desc} ({peak_val} orders in one slot)",
+             fontsize=13, fontweight="bold", pad=16, loc="left", color="#1d1d1b")
+ax.text(0, 1.045,
+        f"Across the week {peak_hour:02d}:00 is the busiest hour ({peak_hour_total:,} orders), "
+        f"then {h2:02d}:00 ({v2:,}) and {h3:02d}:00 ({v3:,}) - an evening surge with a smaller lunch bump",
+        transform=ax.transAxes, fontsize=9.5, style="italic", color="#52514e", va="bottom")
+fig.text(0.012, 0.02,
+         f"All {len(df):,} cleaned orders for 2025 counted per weekday-hour slot "
+         f"(empty cells = 0 orders). Source: gomart_orders_clean.csv (Task 4).",
+         ha="left", va="bottom", fontsize=9, style="italic", color="#52514e")
+
+plt.tight_layout()
+out_dir = HERE / "outputs" / "figures"
+out_dir.mkdir(parents=True, exist_ok=True)
+plt.savefig(out_dir / "q4_order_peaks.png", dpi=200, bbox_inches="tight")
+print("Saved:", out_dir / "q4_order_peaks.png")
+plt.show()
 
 # %% [markdown]
-# *Interpretation:*
+# *Interpretation:* Order volume concentrates in the evening: the single busiest slot is Tuesday 19:00 (112 orders) and 19:00 is the busiest hour of the week overall (674 orders), with a smaller lunch-time bump at 12:00 (551 orders), so rider shifts should be weighted toward the 18:00–20:00 window; counts include all 5,913 cleaned orders (delivered and cancelled).
 
 # %% [markdown]
 # ## Task 7 · Team and AI
