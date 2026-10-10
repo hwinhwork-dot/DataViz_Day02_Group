@@ -492,13 +492,73 @@ plt.show()
 
 # %% [markdown]
 # ### Q3 · Do slow deliveries cost good ratings?
-# *Task: ...  Chart and why: ...*
+# **Task:** Discover the relationship between delivery time
+# and customer rating, and identify when ratings start to decline.
+#
+# **Chart and why:** A line chart shows average customer ratings
+# across 10-minute delivery intervals, making it easy to identify
+# the downward trend and an approximate threshold.
+# Only delivered orders with valid times and ratings are included.
 
 # %%
-# TODO Q3
+# Q3 - Delivery Time vs Customer Rating
+# Use the cleaned dataset from Task 4
 
+q3_data = pd.read_csv(HERE / "gomart_orders_clean.csv")
+
+q3_data = q3_data[
+    (q3_data["status"] == "delivered")
+    & q3_data["delivery_min"].notna()
+    & q3_data["rating"].notna()
+].copy()
+
+q3_data["rating"] = pd.to_numeric(q3_data["rating"])
+
+# Group delivery times into 10-minute intervals
+q3_data["time_bin"] = (
+    q3_data["delivery_min"] // 10 * 10
+).astype(int)
+
+q3_summary = (
+    q3_data.groupby("time_bin")
+    .agg(
+        avg_rating=("rating", "mean"),
+        n_orders=("rating", "size")
+    )
+    .reset_index()
+)
+
+print(q3_summary)
+
+# Plot
+fig, ax = plt.subplots(figsize=(10, 5))
+
+plot_data = q3_summary[q3_summary["n_orders"] >= 10]
+
+ax.plot(
+    plot_data["time_bin"] + 5,
+    plot_data["avg_rating"],
+    marker="o",
+    linewidth=2
+)
+
+ax.set_xlabel("Delivery Time (minutes)")
+ax.set_ylabel("Average Rating (1–5)")
+ax.set_title("Customer Rating vs Delivery Time")
+ax.set_ylim(1, 5)
+ax.grid(alpha=0.3)
+
+plt.tight_layout()
+plt.show()
 # %% [markdown]
-# *Interpretation:*
+# **Interpretation:**
+# Average customer ratings decline as delivery time increases.
+# Ratings fall from 4.53 for deliveries taking 20–29 minutes
+# to 3.87 at 30–39 minutes and 2.81 at 40–49 minutes.
+# This suggests that ratings begin to decline noticeably
+# around 30 minutes, with a sharper drop after 40 minutes.
+# However, this is an association, not proof of causation.
+# Since ratings are optional, selection bias may exist.
 #
 # ### Q4 · When are the peaks?
 # *Task: ...  Chart and why: ...*
