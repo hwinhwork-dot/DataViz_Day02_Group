@@ -117,15 +117,15 @@ print("impossible delivery times:", sorted(odd.tolist()))
 #
 # | Column | Attribute type | Direction | Key / value | Notes on missing values |
 # |---|---|---|---|---|
-# | order_id | categorical (a name made of letters and digits) | – | **key** | none |
+# | order_id | categorical (a name made of letters and digits) | none | **key** | none |
 # | order_time | quantitative (time) | sequential; its hour and weekday are cyclic | value | none |
-# | district | categorical | – | value (key to the district table) | none |
+# | district | categorical | none | value (key to the district table) | none |
 # | customer_type | categorical (new / returning / member) | – (could be read as ordinal by loyalty) | value | none |
 # | member_tier | ordinal | sequential: Silver < Gold < Platinum | value | empty = **not applicable**: non-members |
-# | payment | categorical | – | value | none |
+# | payment | categorical | none | value | none |
 # | items | quantitative (a count) | sequential | value | none |
 # | basket_value_vnd | quantitative (VND) | sequential | value | 25 **not recorded** (after removing duplicates) |
-# | status | categorical (delivered / cancelled) | – | value | none |
+# | status | categorical (delivered / cancelled) | none | value | none |
 # | delivery_min | quantitative (minutes) | sequential | value | empty = **not applicable**: cancelled orders; 6 impossible values set to missing |
 # | rating | ordinal (1–5) | sequential (or diverging around 3) | value | empty = **not given**: rating is optional |
 # | zone *(joined)* | ordinal | sequential by distance: Central < Inner < Outer | value | none |
@@ -168,8 +168,8 @@ print(named["rating"].cat.categories.tolist(), "| ordered:", named["rating"].cat
 #    for every cancelled order and for about a third of delivered ones: *not given*, because rating is
 #    optional. We keep it empty and do not fill it; in Q3 we remember that customers who rate may not
 #    be typical.
-# 3. **Ordered categories:** `member_tier` (Silver < Gold < Platinum) and `rating` (1 < … < 5),
-#    converted by `make_ordered()`; plus `zone` (Central < Inner < Outer) and `weekday` (Mon → Sun),
+# 3. **Ordered categories:** `member_tier` (Silver < Gold < Platinum) and `rating` (1 < 2 < 3 < 4 < 5),
+#    converted by `make_ordered()`; plus `zone` (Central < Inner < Outer) and `weekday` (Mon to Sun),
 #    created in Task 4.
 
 # %% [markdown]
@@ -289,7 +289,7 @@ print("saved:", HERE / "gomart_orders_clean.csv", orders.shape)
 
 # %% [markdown]
 # `orders` is the table for Task 5: one row per order, with its zone and distance to the hub,
-# plus `hour`, `weekday` (ordered Mon → Sun) and `month`. No order lost its zone in the merge.
+# plus `hour`, `weekday` (ordered Mon to Sun) and `month`. No order lost its zone in the merge.
 # It is also saved as `gomart_orders_clean.csv` next to this notebook. A CSV forgets types: after
 # `pd.read_csv` parse `order_time` again and re-create the ordered categories.
 # For averages of `rating`, use `orders["rating"].astype(float)`.
@@ -653,12 +653,22 @@ plt.show()
 # ## Task 7 · Team and AI
 # | Member | What they did | Share of work |
 # |---|---|---|
-# | | | |
+# | Nguyễn Hoàng Minh (leader) | Hoàng Minh worked on Tasks 1 to 4 with Nhã Đoan. Hoàng Minh also managed the repository, put everyone's parts into one notebook and led the memo. | 20% |
+# | Trần Nhã Đoan | Nhã Đoan worked on Tasks 1 to 4 with Hoàng Minh: looking at the raw data, naming the columns, cleaning the file and joining the district table. | 20% |
+# | Phạm Quang Minh | Quang Minh answered Q1: where deliveries are slow, by zone, by district and by distance to the hub. | 15% |
+# | Trần Nguyễn Thanh Thảo | Thảo answered Q2: whether the move to e-wallet payments is real. | 15% |
+# | Nguyễn Minh Nguyệt | Minh Nguyệt answered Q3: whether slow deliveries cost good ratings. | 15% |
+# | Phạm Tuấn Anh | Tuấn Anh answered Q4: when the order peaks happen. | 15% |
 
 # %%
 AI_USE = """
 Tool(s) used:
+My group used Claude Code, an AI assistant from Anthropic. It worked inside our project folder, so it could read our files and run our code.
+
 What we asked:
+My group asked the assistant to go through the raw GoMart file and tell us what was wrong with it. It found duplicate orders, district and payment names written in different ways, two date formats in one column, basket values saved as text, delivery times that cannot be true, and empty cells. Then my group asked it for ways to clean each problem, and it explained the choices, for example why an order stays in the data when only its delivery time is wrong. We also asked it to write a first draft of the cleaning code, the code that joins the district table, and the tables in Tasks 0, 1 and 2. For the memo, we told it which two ideas the group chose, and it wrote the first wording and the chart. Later we asked it to rewrite the explanation of Q3, to change the markers in the Q2 chart, and to help us put the members' work into one notebook.
+
 What we checked or changed ourselves:
+My group chose the two Big Ideas of the memo. The first draft did not convince us, so we asked for another one with more facts from the charts. The assistant checked each number in the memo against the cleaned data file, and my group read every draft and asked for changes until we agreed with it. Members wrote Q1 to Q4 on their own branches and kept their own results. The assistant did not change any number or chart in Q1 to Q4. The only change to a member's chart was the Q2 markers, because the group thought the triangle looked like an arrow.
 """
 print(AI_USE)
