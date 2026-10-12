@@ -1,10 +1,11 @@
 # GH2 GoMart: export one image for each question (Q1 to Q4) into this folder.
 #   The script runs the submitted notebook (../gh2_gomart/GH2_TeamName.ipynb) from top to bottom,
 #   exactly as written. It collects every chart that a question shows and joins them into one image:
-#     Q1: box plots by zone and by district, then the distance scatter plot   (Quang Minh)
+#     Q1: the two simple bar charts (the box plots and the scatter plot of Quang Minh stay in the notebook)
 #     Q2: monthly payment shares, then the two supporting bar charts          (Thảo)
 #     Q3: average rating by delivery time                                     (Minh Nguyệt)
 #     Q4: orders by hour, orders by weekday, then the peak-window heatmap     (Tuấn Anh)
+#   A question stops collecting charts when the notebook reaches a note that starts with "More detail".
 #   The charts are placed one under the other and are never changed. The notebook runs in a
 #   temporary folder, so nothing in the repository is overwritten and no extra image files are left behind.
 # Needs: pandas, matplotlib, seaborn and pillow (matplotlib installs pillow).
@@ -73,8 +74,8 @@ def main():
                         for q in NAMES:
                             if f"### {q} " in text:
                                 section = q
-                        if text.startswith("## Task 7"):
-                            section = None
+                        if text.startswith(("## Task 7", "**More detail")):
+                            section = None                  # the charts below this note stay in the notebook only
                     elif cell["cell_type"] == "code":
                         with contextlib.redirect_stdout(io.StringIO()):
                             exec(text, ns)
