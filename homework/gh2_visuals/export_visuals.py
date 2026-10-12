@@ -1,13 +1,14 @@
-# GH2 GoMart · export the main chart of each question (Q1–Q4) as a PNG into this folder
-#   Runs the submitted notebook (../gh2_gomart/GH2_TeamName.ipynb) from top to bottom, exactly as
-#   written, and saves the FIRST figure shown in each question's section:
-#     Q1 · box plots of delivery time by zone and district   (Quang Minh)
-#     Q2 · monthly share of payment methods, trend line       (Thảo)
-#     Q3 · average rating by delivery time                    (Minh Nguyệt)
-#     Q4 · orders by hour of day, bar chart                   (Tuấn Anh)
-#   The notebook runs in a temporary folder, so nothing in the repo is overwritten
-#   (the clean CSV stays as it is, and no extra image files are left behind).
-# Needs: pandas, matplotlib, seaborn (requirements.txt). Run: python homework/gh2_visuals/export_visuals.py
+# GH2 GoMart: export one image for each question (Q1 to Q4) into this folder.
+#   The script runs the submitted notebook (../gh2_gomart/GH2_TeamName.ipynb) from top to bottom,
+#   exactly as written. It collects every chart that a question shows and joins them into one image:
+#     Q1: box plots by zone and by district, then the distance scatter plot   (Quang Minh)
+#     Q2: monthly payment shares, then the two supporting bar charts          (Thảo)
+#     Q3: average rating by delivery time                                     (Minh Nguyệt)
+#     Q4: orders by hour, orders by weekday, then the peak-window heatmap     (Tuấn Anh)
+#   The charts are placed one under the other and are never changed. The notebook runs in a
+#   temporary folder, so nothing in the repository is overwritten and no extra image files are left behind.
+# Needs: pandas, matplotlib, seaborn and pillow (matplotlib installs pillow).
+# Run it from the repository root: python homework/gh2_visuals/export_visuals.py
 
 import contextlib
 import io
@@ -19,26 +20,41 @@ import warnings
 from pathlib import Path
 
 import matplotlib
-matplotlib.use("Agg")                      # draw off-screen: no windows pop up
+matplotlib.use("Agg")                      # draw off-screen, so no window opens
 import matplotlib.pyplot as plt
+from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 NOTEBOOK = HERE.parent / "gh2_gomart" / "GH2_TeamName.ipynb"
 RAW = HERE.parent.parent / "data" / "raw"
-NAMES = {"Q1": "q1_delivery_time_by_zone.png", "Q2": "q2_ewallet_trend.png",
-         "Q3": "q3_rating_vs_delivery_time.png", "Q4": "q4_order_peaks.png"}
+NAMES = {"Q1": "q1_delivery_time.png", "Q2": "q2_ewallet.png",
+         "Q3": "q3_ratings.png", "Q4": "q4_order_peaks.png"}
+PAD, GAP = 60, 50                          # white space around and between the charts, in pixels
+
+
+def join_vertically(png_list, path):
+    """Put the charts one under the other, centred on a white page."""
+    pictures = [Image.open(io.BytesIO(data)).convert("RGB") for data in png_list]
+    width = max(p.width for p in pictures) + 2 * PAD
+    height = sum(p.height for p in pictures) + GAP * (len(pictures) - 1) + 2 * PAD
+    page = Image.new("RGB", (width, height), "white")
+    top = PAD
+    for p in pictures:
+        page.paste(p, ((width - p.width) // 2, top))
+        top += p.height + GAP
+    page.save(path, optimize=True)
 
 
 def main():
     cells = json.loads(NOTEBOOK.read_text(encoding="utf-8"))["cells"]
-    section, saved = None, {}
+    section, charts = None, {q: [] for q in NAMES}
 
     def show(*args, **kwargs):              # replaces plt.show while the notebook runs
         for num in plt.get_fignums():
-            if section in NAMES and section not in saved:
-                path = HERE / NAMES[section]
-                plt.figure(num).savefig(path, dpi=200, bbox_inches="tight", facecolor="white")
-                saved[section] = path
+            if section in charts:
+                buffer = io.BytesIO()
+                plt.figure(num).savefig(buffer, format="png", dpi=200, bbox_inches="tight", facecolor="white")
+                charts[section].append(buffer.getvalue())
         plt.close("all")
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -65,9 +81,12 @@ def main():
         finally:
             os.chdir(cwd)
 
-    for q in NAMES:
-        print(f"{q}: {saved[q].relative_to(HERE.parent.parent)}" if q in saved else f"{q}: no figure found")
-    return saved
+    for q, name in NAMES.items():
+        if charts[q]:
+            join_vertically(charts[q], HERE / name)
+            print(f"{q}: {len(charts[q])} chart(s) in {(HERE / name).relative_to(HERE.parent.parent)}")
+        else:
+            print(f"{q}: no chart found")
 
 
 if __name__ == "__main__":

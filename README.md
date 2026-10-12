@@ -1,10 +1,14 @@
-# Trực quan hoá dữ liệu — Day 02 (Bài nhóm)
+# Data Visualization, Day 02: Group Work
 
-**Tên nhóm:** _(chưa đặt)_
+My group keeps all of its Session 2 work for the Data Visualization course in this repository. The work has two parts. The first part is four short activities (A to D) from the Session 2 slides. The second part is Group Homework 2, where my group answers four questions about the 2025 orders of a made-up grocery delivery service called GoMart.
 
-## Thành viên & nhánh làm việc
+Team name: not chosen yet.
 
-| Thành viên | Nhánh riêng |
+## Members and branches
+
+Each member works on their own branch.
+
+| Member | Branch |
 |---|---|
 | Nguyễn Hoàng Minh (leader) | `hwinh` |
 | Phạm Quang Minh | `quang-minh` |
@@ -13,56 +17,63 @@
 | Nguyễn Minh Nguyệt | `minh-nguyet` |
 | Trần Nguyễn Thanh Thảo | `thao` |
 
-## Quy trình làm việc
+## How my group works together
 
-```
-nhánh riêng ──PR──▶ dev ──(chỉ hwinh)──▶ main
-```
+A member never pushes to `dev` or `main` directly. A member pushes to their own branch and then opens a pull request into `dev`. The leader reads the pull request and merges it. When my group is ready to hand in the work, the leader opens a pull request from `dev` into `main`.
 
-- `main`: bản nộp cuối. **Chỉ nhận PR từ `dev`**, do hwinh merge. Không ai push thẳng được,
-  PR từ nhánh khác bị chặn (check `chi-nhan-tu-dev` báo lỗi).
-- `dev`: nhánh tích hợp chung. Thành viên **chỉ tạo Pull Request**; **chỉ hwinh merge**.
-- Nhánh riêng: mỗi người chỉ làm trên nhánh của mình.
+GitHub enforces these rules for us:
 
-PR nhắm vào `main` do thành viên khác tạo sẽ bị **tự động đóng** — hãy chọn base là `dev`.
+- The `main` branch accepts pull requests only from `dev`, and only the repository owner can merge them.
+- The `dev` branch accepts changes only through pull requests, and only the repository owner can merge them.
+- A pull request into `main` from any other branch fails the check named `chi-nhan-tu-dev`. A pull request into `main` that a member opens is also closed automatically.
+- Nobody can delete a member branch.
 
-### Các bước
+### Steps for a member
+
+First, download the repository and switch to your own branch. The example below uses the branch `thao`.
 
 ```bash
-# 1. Clone và chuyển sang nhánh của mình (ví dụ: thao)
 git clone https://github.com/hwinhwork-dot/DataViz_Day02_Group.git
 cd DataViz_Day02_Group
 git checkout thao
+```
 
-# 2. Trước khi làm, cập nhật code mới nhất từ dev
+Before you start working, pull the newest work from `dev`.
+
+```bash
 git pull origin dev
+```
 
-# 3. Làm bài, rồi commit & push lên nhánh của mình
+When you finish a piece of work, save it and push it to your own branch.
+
+```bash
 git add .
-git commit -m "Mô tả ngắn thay đổi"
+git commit -m "Short description of the change"
 git push origin thao
 ```
 
-4. Lên GitHub → **Pull requests** → **New pull request** → chọn `base: dev` ← `compare: <nhánh của mình>`.
+Last, open GitHub, go to Pull requests, and choose New pull request. Set the base branch to `dev` and the compare branch to your own branch.
 
-## Cấu trúc thư mục
+## Folders
 
 ```
 .
-├── activities/       # Activity A–D của Session 2 (mỗi activity 1 file .py + file chạy tổng)
-├── homework/         # 2 bài nhóm Session 2: mới có khung, chưa làm
+├── activities/       Activities A to D, one Python file for each, plus one file that runs all four
+├── homework/         Group Homework 2 (notebook, clean data, images, notes)
 ├── data/
-│   ├── raw/          # Dữ liệu gốc, không chỉnh sửa
-│   └── processed/    # Dữ liệu đã làm sạch / biến đổi
-├── notebooks/        # Jupyter notebooks phân tích & vẽ biểu đồ
-├── src/              # Hàm Python dùng lại (style.py: style chung cho mọi biểu đồ)
+│   ├── raw/          The original data files, which we never edit
+│   └── processed/    Empty for now
+├── notebooks/        Empty for now
+├── src/              Shared Python code (style.py gives every activity chart the same look)
 ├── outputs/
-│   └── figures/      # Biểu đồ xuất ra (PNG/SVG/HTML)
-├── reports/          # Báo cáo / bài nộp
+│   └── figures/      The four activity images
+├── reports/          Empty for now
 └── requirements.txt
 ```
 
-## Cài đặt
+## Setup
+
+The commands below create a virtual environment and install the packages.
 
 ```bash
 python3 -m venv .venv
@@ -71,33 +82,24 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-## Nội dung bài làm
+## Activities A to D
 
-### Activity A–D (Session 2 · Data and visualization models)
+Each activity is a separate Python file. When you run it, it saves one image into `outputs/figures/`. The data comes from the course, and all of it is simulated.
 
-Mỗi activity là một file độc lập, chạy xong lưu 1 hình vào `outputs/figures/`.
+- Activity A asks which type each of six datasets is. My group found that only the delivery orders that arrive right now form a stream. Two other items can be argued in two ways. See [the code](activities/activity_a_dataset_types.py) and [the image](outputs/figures/activity_a_dataset_types.png).
+- Activity B sorts the eleven columns of an online shop table into categorical, ordinal and quantitative types. Only `order_id` is a key, and my group should never average `order_id`. See [the code](activities/activity_b_attribute_types.py) and [the image](outputs/figures/activity_b_attribute_types.png).
+- Activity C turns a wide table into a long table with `melt`. The result has six rows, and the keys are the branch and the category. My group also shows why a new date is one extra column in the long table but three extra columns per day in the wide table. See [the code](activities/activity_c_reshape.py) and [the image](outputs/figures/activity_c_reshape.png).
+- Activity D rewrites four vague requests as clear tasks and answers each one with a chart that my group drew from the real data. See [the code](activities/activity_d_vague_to_precise.py) and [the image](outputs/figures/activity_d_vague_to_precise.png).
 
-| Activity | File | Hình | Kết luận chính |
-|---|---|---|---|
-| A · Which dataset type? | [activity_a_dataset_types.py](activities/activity_a_dataset_types.py) | [png](outputs/figures/activity_a_dataset_types.png) | 6 tình huống, 5 loại dataset; chỉ đơn hàng giao đến “ngay lúc này” là stream (mục 2 và 4 có thể lập luận theo hai cách) |
-| B · Classify the attributes | [activity_b_attribute_types.py](activities/activity_b_attribute_types.py) | [png](outputs/figures/activity_b_attribute_types.png) | 11 cột chia 3 nhóm: 4 định danh, 3 thứ bậc, 4 định lượng; key duy nhất là `order_id`; không lấy trung bình `order_id`, `rating` còn tranh luận |
-| C · Reshape on paper | [activity_c_reshape.py](activities/activity_c_reshape.py) | [png](outputs/figures/activity_c_reshape.png) | `melt` cho 6 dòng (key: branch + category); thêm ngày: long thêm 1 cột, wide thêm 3 cột mỗi ngày |
-| D · From vague to precise | [activity_d_vague_to_precise.py](activities/activity_d_vague_to_precise.py) | [png](outputs/figures/activity_d_vague_to_precise.png) | 4 yêu cầu mơ hồ → 5 task → 5 biểu đồ vẽ từ dữ liệu thật |
-
-Chạy cả 4 một lần: [activities/run_all_activities.py](activities/run_all_activities.py).
+To run all four at once, use the first command below. To run one activity, use the second command.
 
 ```bash
-python activities/run_all_activities.py          # cả A–D
-python activities/activity_c_reshape.py          # hoặc từng activity
+python activities/run_all_activities.py
+python activities/activity_c_reshape.py
 ```
 
-Style kế thừa từ bài Session 1 (`src/style.py`): font serif Georgia, mực đen + xám, một màu nhấn,
-tiêu đề nói thẳng kết luận, phụ đề nghiêng, chú thích nguồn ở cuối. Bảng màu đã được kiểm tra cho
-người mù màu. Dữ liệu là dữ liệu mô phỏng của khoá học (`data/raw/`).
+The charts follow the style of our Session 1 work. They use a serif font, black and grey ink, one accent colour, a title that states the finding, and a source line at the bottom. My group also checked the colours with a colour-blindness test.
 
-### Bài nhóm · Group Homework 2 (GoMart)
+## Group Homework 2: GoMart deliveries
 
-Đã xong cả 8 task (0–7): team card, Look, Name, Clean, Merge, 4 câu Q1–Q4, memo 2 Big Idea, bảng phân công và AI log.
-Bài nộp: [homework/gh2_gomart/GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb).
-Dữ liệu đã làm sạch để vẽ Task 5: [homework/gh2_gomart/gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv).
-Chi tiết: [homework/README.md](homework/README.md). Bốn ảnh Q1–Q4: [homework/gh2_visuals/](homework/gh2_visuals/).
+My group has finished all eight tasks of Group Homework 2. The notebook that we hand in is [GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb). The cleaned data is in [gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv), and one image for each question is in [homework/gh2_visuals](homework/gh2_visuals/). The file [homework/README.md](homework/README.md) explains the details.
