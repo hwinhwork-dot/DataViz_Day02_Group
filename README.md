@@ -1,6 +1,6 @@
-# Data Visualization, Day 02: Group Work
+# Data Visualization: Group Homework 2
 
-My group keeps all of its Session 2 work for the Data Visualization course in this repository. The work has two parts. The first part is four short activities (A to D) from the Session 2 slides. The second part is Group Homework 2, where my group answers four questions about the 2025 orders of a made-up grocery delivery service called GoMart.
+My group keeps its work for Group Homework 2 of the Data Visualization course in this repository. In this homework, my group answers four questions about the 2025 orders of a made-up grocery delivery service called GoMart. The data is simulated.
 
 Team name: not chosen yet.
 
@@ -58,17 +58,11 @@ Last, open GitHub, go to Pull requests, and choose New pull request. Set the bas
 
 ```
 .
-├── activities/       Activities A to D, one Python file for each, plus one file that runs all four
-├── homework/         Group Homework 2 (notebook, clean data, images, notes)
+├── homework/         Group Homework 2: the notebook, the clean data, the images and the notes
 ├── data/
-│   ├── raw/          The original data files, which we never edit
-│   └── processed/    Empty for now
-├── notebooks/        Empty for now
-├── src/              Shared Python code (style.py gives every activity chart the same look)
-├── outputs/
-│   └── figures/      The four activity images
-├── reports/          Empty for now
-└── requirements.txt
+│   └── raw/          The two original GoMart files, which we never edit
+├── requirements.txt  The Python packages that we use
+└── (empty folders)   data/processed, notebooks, outputs/figures, reports and src come from the course template
 ```
 
 ## Setup
@@ -81,24 +75,6 @@ source .venv/bin/activate
 pip install -r requirements.txt
 jupyter lab
 ```
-
-## Activities A to D
-
-Each activity is a separate Python file. When you run it, it saves one image into `outputs/figures/`. The data comes from the course, and all of it is simulated.
-
-- Activity A asks which type each of six datasets is. My group found that only the delivery orders that arrive right now form a stream. Two other items can be argued in two ways. See [the code](activities/activity_a_dataset_types.py) and [the image](outputs/figures/activity_a_dataset_types.png).
-- Activity B sorts the eleven columns of an online shop table into categorical, ordinal and quantitative types. Only `order_id` is a key, and my group should never average `order_id`. See [the code](activities/activity_b_attribute_types.py) and [the image](outputs/figures/activity_b_attribute_types.png).
-- Activity C turns a wide table into a long table with `melt`. The result has six rows, and the keys are the branch and the category. My group also shows why a new date is one extra column in the long table but three extra columns per day in the wide table. See [the code](activities/activity_c_reshape.py) and [the image](outputs/figures/activity_c_reshape.png).
-- Activity D rewrites four vague requests as clear tasks and answers each one with a chart that my group drew from the real data. See [the code](activities/activity_d_vague_to_precise.py) and [the image](outputs/figures/activity_d_vague_to_precise.png).
-
-To run all four at once, use the first command below. To run one activity, use the second command.
-
-```bash
-python activities/run_all_activities.py
-python activities/activity_c_reshape.py
-```
-
-The charts follow the style of our Session 1 work. They use a serif font, black and grey ink, one accent colour, a title that states the finding, and a source line at the bottom. My group also checked the colours with a colour-blindness test.
 
 ## Group Homework 2: GoMart deliveries
 
