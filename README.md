@@ -97,7 +97,7 @@ người mù màu. Dữ liệu là dữ liệu mô phỏng của khoá học (`d
 
 ### Bài nhóm · Group Homework 2 (GoMart)
 
-Đã xong Task 0–4 (team card, Look, Name, Clean, Merge); còn **Task 5–7** cho cả nhóm.
+Đã xong cả 8 task (0–7): team card, Look, Name, Clean, Merge, 4 câu Q1–Q4, memo 2 Big Idea, bảng phân công và AI log.
 Bài nộp: [homework/gh2_gomart/GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb).
 Dữ liệu đã làm sạch để vẽ Task 5: [homework/gh2_gomart/gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv).
-Chi tiết và việc còn lại: [homework/README.md](homework/README.md).
+Chi tiết: [homework/README.md](homework/README.md). Bốn ảnh Q1–Q4: [homework/gh2_visuals/](homework/gh2_visuals/).

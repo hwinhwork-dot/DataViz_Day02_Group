@@ -1,4 +1,4 @@
-# Bài nhóm Session 2 · đã làm Task 0–4, còn Task 5–7
+# Bài nhóm Session 2 · đã xong Task 0–7
 
 Hai bài nhóm của buổi 2 (slide 58–59).
 
@@ -13,7 +13,7 @@ Dữ liệu GoMart đã có sẵn trong `data/raw/` (`gomart_orders_2025.csv`, `
 · Task 3 Clean · Task 4 Merge đã xong. Chạy notebook sẽ tạo ra
 [gh2_gomart/gomart_orders_clean.csv](gh2_gomart/gomart_orders_clean.csv): 5.913 đơn đã làm sạch,
 có thêm `zone`, `km_to_hub`, `hour`, `weekday`, `month`, là dữ liệu cho Task 5.
-Còn lại: **Task 5** (4 biểu đồ), **Task 6** (memo + Big Idea), **Task 7** (phân công + khai báo AI).
+Task 5 (Q1–Q4, mỗi bạn một câu), Task 6 (memo 2 Big Idea) và Task 7 (bảng phân công + AI log) cũng đã xong. Bài nộp là `gh2_gomart/GH2_TeamName.ipynb`, đã chạy sẵn nên mở ra là thấy biểu đồ. Ảnh của 4 câu Q nằm trong `gh2_visuals/` (chạy `export_visuals.py` để tạo lại).
 
 ## GH2 cần làm gì (tóm tắt brief)
 
