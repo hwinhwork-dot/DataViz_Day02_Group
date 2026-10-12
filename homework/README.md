@@ -41,7 +41,7 @@ To create the images again, run the command below from the repository root.
 python homework/gh2_visuals/export_visuals.py
 ```
 
-The script runs the notebook in a temporary folder. It collects every chart of a question and puts them one under the other in a single image, so each question has exactly one image. It does not change any chart. The script needs pandas, matplotlib, seaborn and pillow.
+The script runs the notebook in a temporary folder. It collects the charts of a question and puts them one under the other in a single image, so each question has exactly one image. It does not change any chart. For Q1, the image shows the two simple bar charts. The box plots and the scatter plot of Quang Minh come after a note that starts with "More detail", so the script stops collecting charts there and these charts stay in the notebook only. The script needs pandas, matplotlib, seaborn and pillow.
 
 ## What is still open
 
