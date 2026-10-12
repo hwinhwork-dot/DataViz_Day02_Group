@@ -5,7 +5,7 @@ Hai bài nhóm của buổi 2 (slide 58–59).
 | # | Bài | File | Nộp |
 |---|---|---|---|
 | 1 | Project kick-off · team card (3 dataset ứng viên, mỗi dataset 2 câu hỏi dạng action + target) | [project_kickoff_team_card.md](project_kickoff_team_card.md) | là Task 0 của GH2; proposal 1 trang ở Session 4 |
-| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (bản nộp) · [gh2_gomart/gh2_gomart.py](gh2_gomart/gh2_gomart.py) (tạo tự động từ notebook, cùng nội dung, dạng `.py`) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
+| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (bản nộp, đã chạy sẵn nên mở ra là thấy biểu đồ) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
 
 Dữ liệu GoMart đã có sẵn trong `data/raw/` (`gomart_orders_2025.csv`, `gomart_districts.csv`).
 
@@ -13,7 +13,7 @@ Dữ liệu GoMart đã có sẵn trong `data/raw/` (`gomart_orders_2025.csv`, `
 · Task 3 Clean · Task 4 Merge đã xong. Chạy notebook sẽ tạo ra
 [gh2_gomart/gomart_orders_clean.csv](gh2_gomart/gomart_orders_clean.csv): 5.913 đơn đã làm sạch,
 có thêm `zone`, `km_to_hub`, `hour`, `weekday`, `month`, là dữ liệu cho Task 5.
-Task 5 (Q1–Q4, mỗi bạn một câu), Task 6 (memo 2 Big Idea) và Task 7 (bảng phân công + AI log) cũng đã xong. Bài nộp là `gh2_gomart/GH2_TeamName.ipynb`, đã chạy sẵn nên mở ra là thấy biểu đồ. Ảnh của 4 câu Q nằm trong `gh2_visuals/` (chạy `export_visuals.py` để tạo lại).
+Task 5 (Q1–Q4, mỗi bạn một câu), Task 6 (memo 2 Big Idea) và Task 7 (bảng phân công + AI log) cũng đã xong. Bài nộp là file notebook `gh2_gomart/GH2_TeamName.ipynb`. Ảnh của 4 câu Q nằm trong `gh2_visuals/` (chạy `export_visuals.py` để tạo lại).
 
 ## GH2 cần làm gì (tóm tắt brief)
 

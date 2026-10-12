@@ -42,3 +42,7 @@ Thumbs.db
 # ---------- Công cụ AI ----------
 .playwright-mcp/
 .claude/settings.local.json
+
+# ---------- Ảnh phụ do notebook GH2 tự lưu khi chạy (đã có sẵn trong notebook) ----------
+homework/gh2_gomart/outputs/
+outputs/figures/q*.png
