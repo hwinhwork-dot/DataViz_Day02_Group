@@ -5,7 +5,7 @@ Hai bài nhóm của buổi 2 (slide 58–59).
 | # | Bài | File | Nộp |
 |---|---|---|---|
 | 1 | Project kick-off · team card (3 dataset ứng viên, mỗi dataset 2 câu hỏi dạng action + target) | [project_kickoff_team_card.md](project_kickoff_team_card.md) | là Task 0 của GH2; proposal 1 trang ở Session 4 |
-| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (bản nộp) · [gh2_gomart/gh2_gomart.py](gh2_gomart/gh2_gomart.py) (cùng nội dung, dạng `.py`) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
+| 2 | Group Homework 2 · GoMart deliveries | [gh2_gomart/GH2_TeamName.ipynb](gh2_gomart/GH2_TeamName.ipynb) (bản nộp) · [gh2_gomart/gh2_gomart.py](gh2_gomart/gh2_gomart.py) (tạo tự động từ notebook, cùng nội dung, dạng `.py`) | `GH2_TeamName.ipynb` lên LMS trong 7 ngày sau buổi 2 |
 
 Dữ liệu GoMart đã có sẵn trong `data/raw/` (`gomart_orders_2025.csv`, `gomart_districts.csv`).
 
