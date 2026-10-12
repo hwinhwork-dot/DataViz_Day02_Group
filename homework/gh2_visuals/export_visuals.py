@@ -4,9 +4,9 @@
 #     Q1 · box plots of delivery time by zone and district   (Quang Minh)
 #     Q2 · monthly share of payment methods, trend line       (Thảo)
 #     Q3 · average rating by delivery time                    (Minh Nguyệt)
-#     Q4 · orders by weekday × hour, heatmap                  (Tuấn Anh)
+#     Q4 · orders by hour of day, bar chart                   (Tuấn Anh)
 #   The notebook runs in a temporary folder, so nothing in the repo is overwritten
-#   (the clean CSV and the members' own PNGs stay as they are).
+#   (the clean CSV stays as it is, and no extra image files are left behind).
 # Needs: pandas, matplotlib, seaborn (requirements.txt). Run: python homework/gh2_visuals/export_visuals.py
 
 import contextlib
