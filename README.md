@@ -1,65 +1,73 @@
-# Trực quan hoá dữ liệu — Day 02 (Bài nhóm)
+# Data Visualization: Group Homework 2
 
-**Tên nhóm:** _(chưa đặt)_
+My group keeps its work for Group Homework 2 of the Data Visualization course in this repository. In this homework, my group answers four questions about the 2025 orders of a made-up grocery delivery service called GoMart. The data is simulated.
 
-## Thành viên & nhánh làm việc
+Team name: not chosen yet.
 
-| Thành viên  | Nhánh riêng   |
-|-------------|---------------|
-| hwinh       | `hwinh`       |
-| Quang Minh  | `quang-minh`  |
-| Tuấn Anh    | `tuan-anh`    |
-| Nhã Đoan    | `nha-doan`    |
-| Minh Nguyệt | `minh-nguyet` |
-| Thảo        | `thao`        |
+## Members and branches
 
-## Quy trình làm việc
+Each member works on their own branch.
 
-```
-nhánh riêng ──PR──▶ dev ──(chỉ hwinh)──▶ main
-```
+| Member | Branch |
+|---|---|
+| Nguyễn Hoàng Minh (leader) | `hwinh` |
+| Phạm Quang Minh | `quang-minh` |
+| Phạm Tuấn Anh | `tuan-anh` |
+| Trần Nhã Đoan | `nha-doan` |
+| Nguyễn Minh Nguyệt | `minh-nguyet` |
+| Trần Nguyễn Thanh Thảo | `thao` |
 
-- `main`: bản nộp cuối. **Chỉ hwinh** được merge/push vào `main`.
-- `dev`: nhánh tích hợp chung. Không push thẳng — mọi thay đổi vào qua **Pull Request**.
-- Nhánh riêng: mỗi người chỉ làm trên nhánh của mình.
+## How my group works together
 
-PR nhắm vào `main` do thành viên khác tạo sẽ bị **tự động đóng** — hãy chọn base là `dev`.
+A member never pushes to `dev` or `main` directly. A member pushes to their own branch and then opens a pull request into `dev`. The leader reads the pull request and merges it. When my group is ready to hand in the work, the leader opens a pull request from `dev` into `main`.
 
-### Các bước
+GitHub enforces these rules for us:
+
+- The `main` branch accepts pull requests only from `dev`, and only the repository owner can merge them.
+- The `dev` branch accepts changes only through pull requests, and only the repository owner can merge them.
+- A pull request into `main` from any other branch fails the check named `chi-nhan-tu-dev`. A pull request into `main` that a member opens is also closed automatically.
+- Nobody can delete a member branch.
+
+### Steps for a member
+
+First, download the repository and switch to your own branch. The example below uses the branch `thao`.
 
 ```bash
-# 1. Clone và chuyển sang nhánh của mình (ví dụ: thao)
 git clone https://github.com/hwinhwork-dot/DataViz_Day02_Group.git
 cd DataViz_Day02_Group
 git checkout thao
+```
 
-# 2. Trước khi làm, cập nhật code mới nhất từ dev
+Before you start working, pull the newest work from `dev`.
+
+```bash
 git pull origin dev
+```
 
-# 3. Làm bài, rồi commit & push lên nhánh của mình
+When you finish a piece of work, save it and push it to your own branch.
+
+```bash
 git add .
-git commit -m "Mô tả ngắn thay đổi"
+git commit -m "Short description of the change"
 git push origin thao
 ```
 
-4. Lên GitHub → **Pull requests** → **New pull request** → chọn `base: dev` ← `compare: <nhánh của mình>`.
+Last, open GitHub, go to Pull requests, and choose New pull request. Set the base branch to `dev` and the compare branch to your own branch.
 
-## Cấu trúc thư mục
+## Folders
 
 ```
 .
+├── homework/         Group Homework 2: the notebook, the clean data, the images and the notes
 ├── data/
-│   ├── raw/          # Dữ liệu gốc, không chỉnh sửa
-│   └── processed/    # Dữ liệu đã làm sạch / biến đổi
-├── notebooks/        # Jupyter notebooks phân tích & vẽ biểu đồ
-├── src/              # Hàm Python dùng lại (load, clean, plot)
-├── outputs/
-│   └── figures/      # Biểu đồ xuất ra (PNG/SVG/HTML)
-├── reports/          # Báo cáo / bài nộp
-└── requirements.txt
+│   └── raw/          The two original GoMart files, which we never edit
+├── requirements.txt  The Python packages that we use
+└── (empty folders)   data/processed, notebooks, outputs/figures, reports and src come from the course template
 ```
 
-## Cài đặt
+## Setup
+
+The commands below create a virtual environment and install the packages.
 
 ```bash
 python3 -m venv .venv
@@ -68,6 +76,6 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-## Nội dung bài làm
+## Group Homework 2: GoMart deliveries
 
-_(Sẽ cập nhật theo yêu cầu của bài lab.)_
+My group has finished all eight tasks of Group Homework 2. The notebook that we hand in is [GH2_TeamName.ipynb](homework/gh2_gomart/GH2_TeamName.ipynb). The cleaned data is in [gomart_orders_clean.csv](homework/gh2_gomart/gomart_orders_clean.csv), and one image for each question is in [homework/gh2_visuals](homework/gh2_visuals/). The file [homework/README.md](homework/README.md) explains the details.
